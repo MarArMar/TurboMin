@@ -1,7 +1,7 @@
 {
   // ****** ESLint ******
   "eslint.enable": true,
-  "eslint.codeActionsOnSave.mode": "all",
+
   "eslint.probe": [
     "javascript",
     "javascriptreact",
@@ -17,8 +17,9 @@
   "eslint.debug": false,
   "eslint.onIgnoredFiles": "off",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": false
   },
+  "eslint.codeActionsOnSave.mode": null,
 
   // ****** Svelte ******
   "svelte.enable-ts-plugin": true,

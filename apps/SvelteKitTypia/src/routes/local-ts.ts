@@ -1,7 +1,7 @@
 export const messageLoadedLocal: string =
   "Local typescript file  local-ts.ts with typescript loaded";
 
-const shouldBeAConst = "Lint test"; // Working
+const shouldBeAConst = "Lint test"; // Lint Working
 
 export const currentURL = (): string => {
   return window.location.href; // Identified Window global

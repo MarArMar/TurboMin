@@ -11,6 +11,10 @@
   import { messageLoadedLocal } from "./local-ts";
   import PrintValue from "SvelteLib/components/PrintValue.svelte";
 
+  let shouldBeAConst = "Lint test"; 
+  // TS correctly detects it is not used
+  // But eslint does not lint it
+
   onMount(() => {
     log("Page mounted");
 
