@@ -1,0 +1,134 @@
+{
+  // ****** ESLint ******
+  "eslint.enable": true,
+  "eslint.codeActionsOnSave.mode": "all",
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "svelte",
+    "markdown"
+  ],
+  //  From https://cnrdev.medium.com/enable-eslint-for-sveltekit-in-vscode-d9fbb39e117f
+  "eslint.validate": ["javascript", "typescript", "svelte"],
+  "eslint.run": "onType",
+  "eslint.debug": false,
+  "eslint.onIgnoredFiles": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  // ****** Svelte ******
+  "svelte.enable-ts-plugin": true,
+  "svelte-autoimport.useSemiColon": false,
+
+  // ****** Hide files ******
+  "hidefiles.selectedProfile": "Show All Files",
+  "hidefiles.configurationType": "local",
+  "hidefiles.globalConfig": {
+    "profiles": [
+      {
+        "name": "Strict",
+        "detail": "Generally not required",
+        "hidden": [
+          "$Default",
+          "turbo.json",
+          "**/requirements.txt",
+          "**/.prettierignore",
+          "**/.prettierrc.cjs",
+          "**/.prettierrc.cjs",
+          "**/.eslintrc.js",
+          "**/.eslintrc.cjs",
+          "**/.eslintignore",
+          "**/.npmrc",
+          "**/.nvmrc",
+          "**/_/",
+          "**/coverage/",
+          "pnpm-workspace.yaml",
+          "pnpm-lock.yaml"
+        ]
+      },
+      {
+        "name": "Default",
+        "detail": "",
+        "description": "Test",
+        "hidden": [
+          "**/node_modules/",
+          "**/__init__.py",
+          "**/.svelte-kit/",
+          "**/.vercel/",
+          "**/.nyc_output/",
+          "**/.venv/",
+          "**/.turbo/",
+          "**/.sentryclirc",
+          "**/vite.config.js.timestamp-*",
+          "**/vite.config.ts.timestamp-*"
+        ]
+      }
+    ]
+  },
+  // WILL BE OVERRIDEN BY HIDE FILES EXTENSION
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
+
+  // ****** Search ******
+  "search.useIgnoreFiles": false, // Ignore files in .gitignore
+  // Extends hidden files
+  "search.exclude": {
+    // Modules
+    "**/node_modules/": true,
+    // Build folders
+    "**/.svelte-kit/": true,
+    "**/.nyc_output/": true,
+    "**/.vercel/": true,
+    "**/.turbo/": true,
+    "**/.svelte/": true,
+    "**/.next/": true,
+    "**/.vercel_build_output/": true,
+    "**/build/": true,
+    "**/dist/": true,
+    "**/dist-ssr/": true,
+    "**/package/": true,
+    "**/.yarn/": true,
+    "**/*.code-search": true,
+    "**/bower_components": true
+  },
+
+  "github.copilot.inlineSuggest.enable": true,
+
+  // ****** Actions buttons ******
+  // https://marketplace.visualstudio.com/items?itemName=seunlanlege.action-buttons
+  "actionButtons": {
+    "defaultColor": "white", // Can also use string color names.
+    "loadNpmCommands": false, // Disables automatic generation of actions for npm commands.
+    "reloadButton": "♻️", // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
+    "commands": [
+      {
+        "name": "install",
+        "command": "pnpm install",
+        "singleInstance": true
+      },
+      {
+        "name": "dev",
+        "singleInstance": true,
+        "command": "npx turbo run dev"
+      },
+      {
+        "name": "build",
+        "singleInstance": true,
+        "command": "npx turbo run build"
+      },
+      {
+        "name": "lint",
+        "command": "npx turbo run lint"
+      }
+    ]
+  }
+}

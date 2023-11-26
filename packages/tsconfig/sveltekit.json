@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "preserveValueImports": true,
+    "lib": ["esnext", "DOM", "DOM.Iterable"],
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
+    "ignoreDeprecations": "5.0",
+
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true
+  },
+
+  "exclude": [
+    "./[!ambient.d.ts]**",
+    "../src/service-worker.js",
+    "../src/service-worker.ts",
+    "../src/service-worker.d.ts",
+
+    "../../**/functions/*",
+    "../../**/static/*",
+
+    "../../**/node_modules/**",
+    "../../**/.svelte-kit/**",
+    "../../**/dist/**",
+    "../../**/build/**",
+    "../../**/.svelte/**",
+    "../../**/.vercel_build_output/**",
+    "../../**/.vercel/**",
+    "../../**/coverage/**",
+    "../../**/_/**",
+    "../../**/static/**.min.js",
+    "../../**/vite.config.js.timestamp-*",
+    "../../**/vite.config.ts.timestamp-*"
+  ]
+}

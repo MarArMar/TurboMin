@@ -1,0 +1,15 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENCED",
+  "scripts": {
+    "lint": "estlint ."
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "ts-node": "^10.9.1",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.2.2"
+  }
+}

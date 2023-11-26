@@ -1,0 +1,27 @@
+{
+  "extends": "tsconfig/sveltekit.json",
+  "compilerOptions": {
+    // PS : Have to duplicate in vite.config.ts for routing !
+    "paths": {
+      "$src/*": ["./src/*"],
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"]
+    }
+  },
+  "exclude": [
+    "../../**/node_modules/**",
+    "../../**/.svelte-kit/**",
+    "../../**/functions/*",
+    "../../**/static/*",
+    "../../**/dist/**",
+    "../../**/build/**",
+    "../../**/.svelte/**",
+    "../../**/.vercel_build_output/**",
+    "../../**/.vercel/**",
+    "../../**/coverage/**",
+    "../../**/_/**",
+    "../../**/vite.config.js.timestamp-*",
+    "../../**/vite.config.ts.timestamp-*"
+  ],
+  "include": ["../../**/*.ts+(|x)"]
+}

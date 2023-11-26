@@ -1,0 +1,24 @@
+{
+  "name": "TurboMin",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build --no-daemon --no-update-notifier",
+    "dev": "turbo run dev --no-daemon --no-update-notifier",
+    "lint": "turbo run lint --no-daemon --no-update-notifier"
+  },
+  "engines": {
+    "node": "18.17.1",
+    "pnpm": "^8.8"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@turbo/gen": "^1.9.7",
+    "@types/node": "18.17.1",
+    "eslint": "^8.54.0",
+    "ts-node": "^10.9.1",
+    "tsconfig": "workspace:*",
+    "turbo": "^1.10.16",
+    "typescript": "^5.2.2"
+  },
+  "packageManager": "pnpm@8.8.0"
+}

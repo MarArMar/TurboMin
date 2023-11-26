@@ -1,0 +1,32 @@
+{
+  "extends": "tsconfig/sveltekit.json",
+  "compilerOptions": {
+    // PS : Have to duplicate in vite.config.ts for routing !
+    "paths": {
+      "$src/*": ["./src/*"],
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"],
+    },
+    // Typia config
+    "sourceMap": false, // Seems to be working when working only with TS files
+    "plugins": [
+      {
+        "transform": "typia/lib/transform"
+      }
+    ],
+    "strictNullChecks": true,
+    "strict": true
+  },
+  "include": [
+    "ambient.d.ts",
+    "./types/**/$types.d.ts",
+    "./vite.config.ts",
+    "./svelte.config.js",
+    "./src/**/*.js",
+    "./src/**/*.ts",
+    "./src/**/*.svelte",
+    "./tests/**/*.js",
+    "./tests/**/*.ts",
+    "./tests/**/*.svelte"
+  ]
+}
