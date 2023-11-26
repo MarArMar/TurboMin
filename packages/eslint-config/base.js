@@ -24,7 +24,7 @@ module.exports = {
     "plugin:svelte/recommended",
     "turbo",
   ],
-  plugins: ["@typescript-eslint", "eslint-plugin-tsdoc", "@stylistic"],
+  plugins: ["@typescript-eslint"],
   ignorePatterns: [
     "*.cjs",
     ".eslintrc.cjs",
