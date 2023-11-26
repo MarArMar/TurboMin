@@ -30,13 +30,21 @@ import { messageLoadedLocal } from "$src/routes/local-ts";
 // Is resolved on dev server and during build
 // BUT NOT resolved by ESLint : Unable to resolve path to module '$src/routes/local-ts'.eslintimport/no-unresolved
 
-const shouldBeAConst = "Lint test"; // Lint working
+let shouldBeAConst = "Lint test"; // Lint working
 ```
 
 Attempts to solve :
 
 - Installed https://github.com/sveltejs/eslint-plugin-svelte
 - Applied https://cnrdev.medium.com/enable-eslint-for-sveltekit-in-vscode-d9fbb39e117f
+- Applied https://github.com/eslint/eslint/discussions/14667
+- And https://www.npmjs.com/package/eslint-import-resolver-alias
+
+Repos : 
+- https://github.com/import-js/eslint-import-resolver-typescript
+- https://github.com/import-js/eslint-plugin-import
+- https://github.com/johvin/eslint-import-resolver-alias => Deprecated
+- https://github.com/laysent/eslint-import-resolver-custom-alias
 
 Questions / Issues raised :
 

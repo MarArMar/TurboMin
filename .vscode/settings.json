@@ -103,7 +103,7 @@
     "**/bower_components": true
   },
 
-  "github.copilot.inlineSuggest.enable": false,
+  "github.copilot.inlineSuggest.enable": true,
 
   // ****** Actions buttons ******
   // https://marketplace.visualstudio.com/items?itemName=seunlanlege.action-buttons

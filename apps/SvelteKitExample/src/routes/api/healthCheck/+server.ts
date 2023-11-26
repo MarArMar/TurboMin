@@ -6,7 +6,7 @@ import { messageLoadedLocal } from "$src/routes/local-ts";
 // Is resolved on dev server and during build
 // BUT NOT resolved by ESLint : Unable to resolve path to module '$src/routes/local-ts'.eslintimport/no-unresolved
 
-const shouldBeAConst = "Lint test"; // Lint working
+let shouldBeAConst = "Lint test"; // Lint working
 
 // import { messageLoadedLocal } from "$src/notexistingpath/local-ts";
 // Correctly not resolved by TS (and ESLint) : Cannot find module '$src/notexistingpath/local-ts' or its corresponding type declarations.ts(2307)

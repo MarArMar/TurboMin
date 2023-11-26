@@ -1,9 +1,12 @@
-// Global ESLint config file
+// Not working as well
+
+const path = require("path");
 
 /**
  * @type {import('eslint').Linter.Config}
  */
 module.exports = {
+  root: true,
   parser: "@typescript-eslint/parser",
 
   parserOptions: {
@@ -13,8 +16,7 @@ module.exports = {
     project: "./tsconfig.json",
     extraFileExtensions: [".svelte"], // This is a required setting in `@typescript-eslint/parser` v4.24.0.
   },
-  // From https://typescript-eslint.io/getting-started/
-  plugins: ["@typescript-eslint"],
+
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -26,7 +28,7 @@ module.exports = {
     "plugin:svelte/recommended",
     "turbo",
   ],
-
+  plugins: ["@typescript-eslint"],
   ignorePatterns: [
     "*.cjs",
     ".eslintrc.cjs",
@@ -62,5 +64,25 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/no-inferrable-types": "off",
+  },
+  settings: {
+    // From https://github.com/eslint/eslint/discussions/14667
+    // And https://www.npmjs.com/package/eslint-import-resolver-alias
+    "import/resolver": {
+      alias: {
+        map: [
+          ["$src", path.resolve(__dirname, "./src")],
+          ["$lib", path.resolve(__dirname, "./src/lib")],
+        ],
+        extensions: [".js", ".ts", ".d.ts", '.json'],
+      },
+      node: {
+        paths: ["src"],
+        extensions: [".js", ".ts", ".d.ts", '.json'],
+      },
+      typescript: {
+        project: "./tsconfig.json",
+      },
+    },
   },
 };
