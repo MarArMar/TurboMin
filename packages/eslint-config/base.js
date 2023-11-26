@@ -4,6 +4,8 @@
  * @type {import('eslint').Linter.Config}
  */
 module.exports = {
+  parser: "@typescript-eslint/parser",
+  
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 2020,
@@ -12,7 +14,6 @@ module.exports = {
     extraFileExtensions: [".svelte"], // This is a required setting in `@typescript-eslint/parser` v4.24.0.
   },
 
-  parser: "@typescript-eslint/parser",
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
