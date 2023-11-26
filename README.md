@@ -57,3 +57,7 @@ Attempts to solve :
 
 - Installed https://github.com/sveltejs/eslint-plugin-svelte
 - Applied https://cnrdev.medium.com/enable-eslint-for-sveltekit-in-vscode-d9fbb39e117f
+
+Questions / Issues raised : 
+- https://github.com/sveltejs/eslint-plugin-svelte/issues/631
+- https://github.com/vercel/turbo/discussions/6584

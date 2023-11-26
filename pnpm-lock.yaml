@@ -57,12 +57,15 @@ importers:
       eslint-import-resolver-typescript:
         specifier: ^3.6.1
         version: 3.6.1(eslint-plugin-import@2.25.3)(eslint@8.54.0)
+      eslint-plugin-svelte:
+        specifier: ^2.32.1
+        version: 2.32.1(eslint@8.54.0)(svelte@4.2.1)(ts-node@10.9.1)
       svelte:
         specifier: ^4.2.1
         version: 4.2.1
       svelte-check:
         specifier: ^3.5.2
-        version: 3.5.2(svelte@4.2.1)
+        version: 3.5.2(postcss@8.4.31)(svelte@4.2.1)
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@18.17.1)(typescript@5.2.2)
@@ -114,7 +117,7 @@ importers:
         version: 4.2.1
       svelte-check:
         specifier: ^3.5.2
-        version: 3.5.2(svelte@4.2.1)
+        version: 3.5.2(postcss@8.4.31)(svelte@4.2.1)
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@18.17.1)(typescript@5.2.2)
@@ -154,7 +157,7 @@ importers:
         version: 4.2.1
       svelte-check:
         specifier: ^3.5.2
-        version: 3.5.2(svelte@4.2.1)
+        version: 3.5.2(postcss@8.4.31)(svelte@4.2.1)
       tsconfig:
         specifier: workspace:*
         version: link:../tsconfig
@@ -3505,7 +3508,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check@3.5.2(svelte@4.2.1):
+  /svelte-check@3.5.2(postcss@8.4.31)(svelte@4.2.1):
     resolution: {integrity: sha512-5a/YWbiH4c+AqAUP+0VneiV5bP8YOk9JL3jwvN+k2PEPLgpu85bjQc5eE67+eIZBBwUEJzmO3I92OqKcqbp3fw==}
     hasBin: true
     peerDependencies:
@@ -3518,7 +3521,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 4.2.1
-      svelte-preprocess: 5.0.4(svelte@4.2.1)(typescript@5.2.2)
+      svelte-preprocess: 5.0.4(postcss@8.4.31)(svelte@4.2.1)(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
       - '@babel/core'
@@ -3558,7 +3561,7 @@ packages:
       svelte: 4.2.1
     dev: true
 
-  /svelte-preprocess@5.0.4(svelte@4.2.1)(typescript@5.2.2):
+  /svelte-preprocess@5.0.4(postcss@8.4.31)(svelte@4.2.1)(typescript@5.2.2):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -3599,6 +3602,7 @@ packages:
       '@types/pug': 2.0.6
       detect-indent: 6.1.0
       magic-string: 0.27.0
+      postcss: 8.4.31
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 4.2.1
