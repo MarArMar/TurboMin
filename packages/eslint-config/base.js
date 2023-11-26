@@ -1,9 +1,4 @@
 // Global ESLint config file
-// const rules = require('./rules').rules
-
-const rules = {
-  "@typescript-eslint/no-inferrable-types": "off",
-};
 
 /**
  * @type {import('eslint').Linter.Config}
@@ -14,30 +9,22 @@ module.exports = {
     ecmaVersion: 2020,
     // Is overriden in each project
     project: "./tsconfig.json",
+    extraFileExtensions: [".svelte"], // This is a required setting in `@typescript-eslint/parser` v4.24.0.
   },
 
   parser: "@typescript-eslint/parser",
   extends: [
-    // "airbnb-base",
-    // "airbnb-typescript/base",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    // "plugin:eslint-comments/recommended",
     "plugin:import/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
+    "plugin:svelte/base",
     "plugin:svelte/recommended",
-    // "prettier",
     "turbo",
   ],
-  plugins: [
-    "svelte3",
-    "@typescript-eslint",
-    "eslint-plugin-tsdoc",
-    "@stylistic",
-  ],
+  plugins: ["@typescript-eslint", "eslint-plugin-tsdoc", "@stylistic"],
   ignorePatterns: [
     "*.cjs",
     ".eslintrc.cjs",
@@ -54,21 +41,24 @@ module.exports = {
   ],
   overrides: [
     {
+      // From https://github.com/sveltejs/eslint-plugin-svelte
       files: ["*.svelte"],
-      processor: "svelte3/svelte3",
-      rules: rules,
+      parser: "svelte-eslint-parser",
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+      },
+      rules: {
+        "@typescript-eslint/no-inferrable-types": "off",
+      },
     },
   ],
-  settings: {
-    "svelte3/typescript": () => require("typescript"),
-  },
-
   env: {
     browser: true,
     node: true,
     es2020: true,
     commonjs: true,
   },
-
-  rules: rules,
+  rules: {
+    "@typescript-eslint/no-inferrable-types": "off",
+  },
 };

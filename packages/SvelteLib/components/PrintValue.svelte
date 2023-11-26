@@ -2,7 +2,9 @@
   // To test imports
   import "./value.css";
   import { messageLoaded } from "common/log"; // Path recognized
+  
   let shouldBeAConst = "Lint test"; // Not linted by ESlint
+  
   let value: string = "valuuuuue";
 </script>
 

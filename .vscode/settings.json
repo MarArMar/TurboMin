@@ -11,7 +11,8 @@
     "svelte",
     "markdown"
   ],
-  //  From https://cnrdev.medium.com/enable-eslint-for-sveltekit-in-vscode-d9fbb39e117f
+  // From https://cnrdev.medium.com/enable-eslint-for-sveltekit-in-vscode-d9fbb39e117f
+  // And https://github.com/sveltejs/eslint-plugin-svelte#visual-studio-code
   "eslint.validate": ["javascript", "typescript", "svelte"],
   "eslint.run": "onType",
   "eslint.debug": false,

@@ -220,13 +220,13 @@ importers:
         version: 2.25.3(@typescript-eslint/parser@5.59.2)(eslint-import-resolver-typescript@3.6.1)(eslint@8.54.0)
       eslint-plugin-svelte:
         specifier: ^2.32.1
-        version: 2.32.1(eslint@8.54.0)(svelte@3.59.1)(ts-node@10.9.1)
-      eslint-plugin-svelte3:
-        specifier: ^4.0.0
-        version: 4.0.0(eslint@8.54.0)(svelte@3.59.1)
+        version: 2.32.1(eslint@8.54.0)(svelte@4.2.1)(ts-node@10.9.1)
       eslint-plugin-tsdoc:
         specifier: ^0.2.17
         version: 0.2.17
+      svelte:
+        specifier: ^4.2.1
+        version: 4.2.1
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -1971,17 +1971,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-svelte3@4.0.0(eslint@8.54.0)(svelte@3.59.1):
-    resolution: {integrity: sha512-OIx9lgaNzD02+MDFNLw0GEUbuovNcglg+wnd/UY0fbZmlQSz7GlQiQ1f+yX0XvC07XPcDOnFcichqI3xCwp71g==}
-    peerDependencies:
-      eslint: '>=8.0.0'
-      svelte: ^3.2.0
-    dependencies:
-      eslint: 8.54.0
-      svelte: 3.59.1
-    dev: true
-
-  /eslint-plugin-svelte@2.32.1(eslint@8.54.0)(svelte@3.59.1)(ts-node@10.9.1):
+  /eslint-plugin-svelte@2.32.1(eslint@8.54.0)(svelte@4.2.1)(ts-node@10.9.1):
     resolution: {integrity: sha512-8rrB4oLXf1R3DakipKRnM6AI5saXcroWwz4z+/biGdNMFvIDKsPLxrgdRRYDouNEOxyXt3X9qRRM22dhWvqKsw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -2002,8 +1992,8 @@ packages:
       postcss-safe-parser: 6.0.0(postcss@8.4.31)
       postcss-selector-parser: 6.0.13
       semver: 7.5.4
-      svelte: 3.59.1
-      svelte-eslint-parser: 0.32.0(svelte@3.59.1)
+      svelte: 4.2.1
+      svelte-eslint-parser: 0.32.0(svelte@4.2.1)
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -3743,7 +3733,7 @@ packages:
       - sugarss
     dev: true
 
-  /svelte-eslint-parser@0.32.0(svelte@3.59.1):
+  /svelte-eslint-parser@0.32.0(svelte@4.2.1):
     resolution: {integrity: sha512-Q8Nh3GHHoWZMv3Ej4zw+3+gyWPR8I5pPTJXEOvW+JOgwhGXqGKh7mOKNlVcEPtk+PCGiK9TPaRtvRkKoJR327A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -3757,7 +3747,7 @@ packages:
       espree: 9.5.2
       postcss: 8.4.31
       postcss-scss: 4.0.6(postcss@8.4.31)
-      svelte: 3.59.1
+      svelte: 4.2.1
     dev: true
 
   /svelte-hmr@0.15.3(svelte@4.2.1):
@@ -3814,11 +3804,6 @@ packages:
       strip-indent: 3.0.0
       svelte: 4.2.1
       typescript: 5.2.2
-    dev: true
-
-  /svelte@3.59.1:
-    resolution: {integrity: sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==}
-    engines: {node: '>= 8'}
     dev: true
 
   /svelte@4.2.1:
