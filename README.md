@@ -11,26 +11,6 @@ Most ESLints lints work,
 
 But some do not in SvelteKit .svelte & .ts files
 
-#### Bug 1 : with .svelte files
-
-In apps\SvelteKitExample\src\routes\+page.svelte :
-
-```html
-<script lang="ts">
-Parsing error: '>' expected.eslint
-```
-
-Previously in apps\SvelteKitExample\src\routes\+page.svelte at some point before I got:
-
-```ts
-import { sveltekit } from "@sveltejs/kit/vite";
-let shouldBeAConst = "Lint test";
-// TS correctly detects it is not used
-// But eslint does not lint it as should be a const
-```
-
-Could not reproduce it
-
 #### Bug 2 : with .ts files
 
 In apps\SvelteKitExample\vite.config.ts :
@@ -58,6 +38,27 @@ Attempts to solve :
 - Installed https://github.com/sveltejs/eslint-plugin-svelte
 - Applied https://cnrdev.medium.com/enable-eslint-for-sveltekit-in-vscode-d9fbb39e117f
 
-Questions / Issues raised : 
+Questions / Issues raised :
+
 - https://github.com/sveltejs/eslint-plugin-svelte/issues/631
 - https://github.com/vercel/turbo/discussions/6584
+
+#### [Solved] Bug : with .svelte files
+
+In apps\SvelteKitExample\src\routes\+page.svelte :
+
+```html
+<script lang="ts">
+Parsing error: '>' expected.eslint
+```
+
+Previously in apps\SvelteKitExample\src\routes\+page.svelte at some point before I got:
+
+```ts
+import { sveltekit } from "@sveltejs/kit/vite";
+let shouldBeAConst = "Lint test";
+// TS correctly detects it is not used
+// But eslint does not lint it as should be a const
+```
+
+Could not reproduce it
