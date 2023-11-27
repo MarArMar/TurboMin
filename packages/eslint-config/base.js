@@ -9,7 +9,7 @@ module.exports = {
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 2020,
-    // Is overriden in each project
+    // Is overridden in each project
     project: "./tsconfig.json",
     extraFileExtensions: [".svelte"], // This is a required setting in `@typescript-eslint/parser` v4.24.0.
   },
