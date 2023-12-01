@@ -1,29 +1,35 @@
 // Global ESLint config file
 
-/**
- * @type {import('eslint').Linter.Config}
- */
+// From https://turbo.build/repo/docs/handbook/linting/eslint
+// const { resolve } = require('node:path')
+// const project = resolve(process.cwd(), 'tsconfig.json')
+
+const rules = require("./rules").rules;
+
+/** @type { import('eslint').Linter.FlatConfig } */
 module.exports = {
+  root: true,
   parser: "@typescript-eslint/parser",
 
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 2020,
-    // Is overridden in each project
-    project: "./tsconfig.json",
-    extraFileExtensions: [".svelte"], // This is a required setting in `@typescript-eslint/parser` v4.24.0.
+    extraFileExtensions: [".svelte"],
   },
-  // From https://typescript-eslint.io/getting-started/
-  plugins: ["@typescript-eslint"],
+
+  plugins: ["@typescript-eslint", "eslint-plugin-tsdoc", "@stylistic"],
+
   extends: [
+    "airbnb-base",
+    "airbnb-typescript/base",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:eslint-comments/recommended",
+    // From https://github.com/sveltejs/eslint-plugin-svelte
     "plugin:svelte/base",
     "plugin:svelte/recommended",
+    "prettier",
     "turbo",
   ],
 
@@ -32,6 +38,8 @@ module.exports = {
     ".eslintrc.cjs",
     ".eslintrc.js",
     "svelte.config.js",
+    // 'scripts/js/*.ts',
+    // 'static/*.js',
     "*.min.js",
     "node_modules/",
     "dist/",
@@ -49,18 +57,40 @@ module.exports = {
       parserOptions: {
         parser: "@typescript-eslint/parser",
       },
+      // * IMPORTS SORTING
+      // From https://haseebmajid.dev/posts/2023-01-10-how-to-autosort-our-sveltekit-imports/
+      // *
       rules: {
-        "@typescript-eslint/no-inferrable-types": "off",
+        ...rules,
       },
     },
   ],
+
+  // TODO: Disable some globals per module
   env: {
     browser: true,
     node: true,
+    // es2017: true,
     es2020: true,
     commonjs: true,
+    // From https://stackoverflow.com/questions/30018271/javascript-standard-style-does-not-recognize-mocha
+    // Avoids 'describe' is not defined.
+    mocha: true,
   },
-  rules: {
-    "@typescript-eslint/no-inferrable-types": "off",
+
+  globals: {
+    // From https://stackoverflow.com/questions/45317154/error-is-not-defined-no-undef/46100803
+    // Should be only if using lodash so not here
+    // _: true, // Avoids error '_' is not defined no-undef
+    // "process":true,
+    // Env vars (false means read-only)
+    VERCEL: false,
+    CF_PAGES: false,
+    FLY_APP_NAME: false,
+    DETA_SPACE_APP: false,
+    NETLIFY: false,
+    AWS_EXECUTION_ENV: false,
+    NODE_ENV: false,
   },
+  rules: rules,
 };

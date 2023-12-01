@@ -10,3 +10,13 @@ export const currentURL = (): string => {
 export const exampleDocument = () => {
   document.createTextNode("test"); // Identified Window global
 };
+
+type SomeProperties = {
+  age: number;
+  name: string;
+};
+
+export const propsValues: SomeProperties = {
+  age: 4,
+  name: "henry",
+};

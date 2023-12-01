@@ -25,7 +25,7 @@ pids
 node_modules/
 .pnp
 .pnp.js
-
+.nyc_output/
 # Turbo
 .turbo/
 
